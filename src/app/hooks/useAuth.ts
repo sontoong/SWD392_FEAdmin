@@ -24,6 +24,9 @@ export function useAuth() {
         ...value,
       });
       const { token, data: userData } = data;
+
+      if (userData.user.role !== "admin") throw new Error("Not admin");
+
       dispatch(loginSuccess(userData.user));
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(userData.user));

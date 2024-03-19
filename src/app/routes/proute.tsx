@@ -28,16 +28,8 @@ const PrivateRoute = ({
   if (inverted) {
     if (isAuth) {
       switch (role) {
-        case "enterprise": {
-          localStorage.clear();
-          return <Navigate to="/login" />;
-        }
-        case "freelancer": {
-          localStorage.clear();
-          return <Navigate to="/login" />;
-        }
         case "admin":
-          return <Navigate to="/admin" />;
+          return <Navigate to="/" />;
         default:
           return <Navigate to="/" />;
       }

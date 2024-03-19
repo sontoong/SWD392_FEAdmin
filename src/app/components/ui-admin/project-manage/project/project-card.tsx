@@ -1,7 +1,20 @@
-import { Avatar, Button, Card, Divider, Flex, Space, Tooltip, Typography } from "antd";
+import {
+  Avatar,
+  Button,
+  Card,
+  Divider,
+  Flex,
+  Space,
+  Tooltip,
+  Typography,
+} from "antd";
 import { Project } from "../../../../models/project";
 import { formatCurrency, calculateDateToNow } from "../../../../utils/utils";
-import { generateProjectFunding, generateProjectFundingType, generateRequirementMsg } from "../../../../utils/generators";
+import {
+  generateProjectFunding,
+  generateProjectFundingType,
+  generateRequirementMsg,
+} from "../../../../utils/generators";
 import {
   EnvironmentOutlined,
   EyeOutlined,
@@ -74,7 +87,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             <Avatar size={"default"} icon={<UserOutlined />} />
             <div className="whitespace-nowrap">
               <span className="font-bold">Đăng bởi: </span>
-              <Link to={`/admin/users/${createdById}`}>
+              <Link to={`/users/${createdById}`}>
                 <span className="text-blue-500">{createdBy}</span>
               </Link>
             </div>
@@ -91,8 +104,10 @@ export default function ProjectCard({ project }: { project: Project }) {
             freelancerRequirement,
             initialFunding,
           )}
-          <br/>
-          <span className="text-[1.2rem] font-normal text-[#b1b1b1]">{generateProjectFundingType(funding)}</span>
+          <br />
+          <span className="text-[1.2rem] font-normal text-[#b1b1b1]">
+            {generateProjectFundingType(funding)}
+          </span>
         </Title>
       </Flex>
     </Card>

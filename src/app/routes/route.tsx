@@ -20,8 +20,6 @@ const PrivateRoute = lazy(() => import("./proute"));
 const TestPage = lazy(() => import("../pages/TestPage"));
 const ErrorPage = lazy(() => import("../pages/404Page"));
 
-const Template = lazy(() => import("../pages/template"));
-
 const AdminLayout = () => {
   return (
     <Layout>
@@ -33,56 +31,6 @@ const AdminLayout = () => {
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <Suspense fallback={<></>}>
-        <AdminLayout />
-      </Suspense>
-    ),
-    children: [
-      {
-        path: "",
-        element: (
-          <Suspense fallback={<></>}>
-            <PrivateRoute inverted={true}>
-              <Navigate to={"/admin"} />
-            </PrivateRoute>
-          </Suspense>
-        ),
-      },
-      {
-        path: "home",
-        element: <Navigate to={"/"} />,
-      },
-      {
-        path: "test",
-        element: (
-          <Suspense fallback={<></>}>
-            <TestPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "template",
-        element: (
-          <Suspense fallback={<></>}>
-            <PrivateRoute inverted={false} requiredRoles={[ROLE.ADMIN]}>
-              <Template />
-            </PrivateRoute>
-          </Suspense>
-        ),
-      },
-      {
-        path: "*",
-        element: (
-          <Suspense fallback={<></>}>
-            <ErrorPage />
-          </Suspense>
-        ),
-      },
-    ],
-  },
-  {
-    path: "/admin",
     element: (
       <Suspense fallback={<></>}>
         <PrivateRoute inverted={false} requiredRoles={[ROLE.ADMIN]}>

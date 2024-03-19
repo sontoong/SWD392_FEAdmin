@@ -65,9 +65,9 @@ export default function MyHeader() {
     switch (role) {
       case "admin":
         return [
-          getItem("Quản Lý Tài Khoản", "/admin/users"),
-          getItem("Quản Lý Project", "/admin/projects"),
-          getItem("Xác Thực Người Dùng", "/admin/verify-user"),
+          getItem("Quản Lý Tài Khoản", "/users"),
+          getItem("Quản Lý Project", "/projects"),
+          getItem("Xác Thực Người Dùng", "/verify-user"),
         ];
       default:
         return [getItem("", "/")];
@@ -85,7 +85,13 @@ export default function MyHeader() {
           ),
         ];
       default:
-        return [];
+        return [
+          getItem(
+            <div onClick={logOut}>Đăng xuất</div>,
+            "",
+            <LogoutOutlined />,
+          ),
+        ];
     }
   };
 
