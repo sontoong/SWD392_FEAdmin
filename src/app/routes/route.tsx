@@ -3,6 +3,7 @@ import { Navigate, Outlet, createBrowserRouter } from "react-router-dom";
 import { ROLE } from "../../constants/role";
 
 const Layout = lazy(() => import("../components/layout/admin-layout"));
+const Dashboard = lazy(() => import("../pages/DashBoard"))
 
 //public
 const LoginPage = lazy(() => import("../pages/LoginPage"));
@@ -42,6 +43,14 @@ export const router = createBrowserRouter([
       {
         path: "",
         element: <Navigate to={"users"} />,
+      },
+      {
+        path: "dashboard",
+        element: (
+          <Suspense fallback={<></>}>
+            <Dashboard />
+          </Suspense>
+        ),
       },
       {
         path: "users",
