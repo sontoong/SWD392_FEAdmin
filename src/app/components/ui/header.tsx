@@ -68,6 +68,7 @@ export default function MyHeader() {
           getItem("Quản Lý Tài Khoản", "/users"),
           getItem("Quản Lý Project", "/projects"),
           getItem("Xác Thực Người Dùng", "/verify-user"),
+          getItem("Dashboard", "/dashboard"),
         ];
       default:
         return [getItem("", "/")];
