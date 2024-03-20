@@ -29,7 +29,7 @@ import Meta from "antd/es/card/Meta";
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { defaultImage } from "../../constants/images";
-import { comments, freelancer, nations } from "../../constants/testData";
+import { comments, candidate, nations } from "../../constants/testData";
 import BackButton from "../components/button/back-button";
 import { useSetHeaderTitle } from "../hooks/useSetHeaderTitle";
 import { generateVerifyMsg } from "../utils/generators";
@@ -77,7 +77,7 @@ export default function UserDetailAdminPage({
     email,
     address,
     phone,
-  } = freelancer;
+  } = candidate;
 
   return (
     <>
@@ -538,13 +538,13 @@ export default function UserDetailAdminPage({
               <Title
                 level={4}
                 copyable={{
-                  text: "https://freelancerviet.vn/ho-so/thang-vo-minh-3.html",
+                  text: "https://candidateviet.vn/ho-so/thang-vo-minh-3.html",
                 }}
               >
                 Sao chép đường dẫn hồ sơ
               </Title>
               <Input
-                defaultValue="https://freelancerviet.vn/ho-so/thang-vo-minh-3.html"
+                defaultValue="https://candidateviet.vn/ho-so/thang-vo-minh-3.html"
                 className="rounded-[6px] border-[1px] border-[#d9d9d9]"
               />
             </div>

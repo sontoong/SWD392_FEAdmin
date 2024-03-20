@@ -13,7 +13,7 @@ const ProjectManagePage = lazy(() => import("../pages/ProjectManagePage"));
 const VerifyUserPage = lazy(() => import("../pages/UserVerifyPage"));
 const ProjectDetail = lazy(() => import("../pages/ProjectDetailAdminPage"));
 const UserDetailAdminPage = lazy(
-  () => import("../pages/FreelancerDetailAdminPage"),
+  () => import("../pages/CandidateDetailAdminPage"),
 );
 
 const PrivateRoute = lazy(() => import("./proute"));

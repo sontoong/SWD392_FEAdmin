@@ -8,14 +8,14 @@ import {
   Project,
   Skill,
   OptionalRequirements,
-  FreelancerProject,
+  CandidateProject,
   EnterpriseProject,
   OutsideProject,
   Field,
   SkillField,
 } from "../app/models/project";
 import { Transaction } from "../app/models/transaction";
-import { Education, Experience, FreelancerDetail } from "../app/models/user";
+import { Education, Experience, CandidateDetail } from "../app/models/user";
 
 export const nations: Nation = {
   all: { label: "Tất cả", value: "all" },
@@ -71,7 +71,7 @@ export const project: Project = {
   isCompleted: false,
   language: "en",
   timeToComplete: "<1 month",
-  freelancerRequirement: "junior",
+  candidateRequirement: "junior",
   optionalRequirements: optionalRequirements,
   funding: "hourly",
   initialFunding: 0,
@@ -80,7 +80,7 @@ export const project: Project = {
   applicationCount: 5,
   inviteSent: 6,
   inviteAccepted: 3,
-  freelancerCount: 10,
+  candidateCount: 10,
   contract: {
     date: 1708532861000,
     depositType: "full",
@@ -112,9 +112,9 @@ export const experience1: Experience = {
   description: "Khóa học Full-Stack Development",
 };
 
-export const freelancer: FreelancerDetail = {
+export const candidate: CandidateDetail = {
   id: "1",
-  role: "freelancer",
+  role: "candidate",
   dob: 1708532861000,
   email: "nguyena@gmail.com",
   username: "Nguyễn Văn A",
@@ -172,7 +172,7 @@ Facebook: fb.com/user/JoeBiden`,
 };
 
 export const projects: Project[] = [project];
-export const freelancers: FreelancerDetail[] = [freelancer];
+export const candidates: CandidateDetail[] = [candidate];
 
 const comment: Comment = {
   title: "Nguyen Van A",
@@ -228,7 +228,7 @@ export const enterpriseInfo: EnterpriseInfo = {
   currentHiringProject: 3,
 };
 
-export const FreelancerProjects: FreelancerProject[] = [
+export const CandidateProjects: CandidateProject[] = [
   {
     ...project,
     startDate: 1708532861000,
@@ -267,9 +267,9 @@ export const FreelancerProjects: FreelancerProject[] = [
 ];
 
 export const EnterpriseProjects: EnterpriseProject[] = [
-  { ...project, applicationCount: 5, freelancerCount: 10, status: "hiring" },
-  { ...project, applicationCount: 5, freelancerCount: 10, status: "closed" },
-  { ...project, applicationCount: 5, freelancerCount: 10, status: "doing" },
+  { ...project, applicationCount: 5, candidateCount: 10, status: "hiring" },
+  { ...project, applicationCount: 5, candidateCount: 10, status: "closed" },
+  { ...project, applicationCount: 5, candidateCount: 10, status: "doing" },
 ];
 
 export const Incomes: Income[] = [

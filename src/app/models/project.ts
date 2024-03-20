@@ -45,7 +45,7 @@ export interface Project {
   contract: Contract;
   funding: "hourly" | "fixed";
   initialFunding: number;
-  freelancerRequirement: ExperienceLevel;
+  candidateRequirement: ExperienceLevel;
   optionalRequirements: OptionalRequirements;
   timeToComplete: "<1 month" | "1-3 month" | ">3 month";
   publishedTime: number;
@@ -55,11 +55,11 @@ export interface Project {
   projectType: "longterm" | "shortterm" | "unknown";
   isCompleted: boolean;
   isVerified: boolean;
-  privacy: "public" | "private" | "freelancer";
+  privacy: "public" | "private" | "candidate";
   applicationCount: number;
   inviteSent: number;
   inviteAccepted: number;
-  freelancerCount: number;
+  candidateCount: number;
 }
 
 export interface CreateProject {
@@ -69,15 +69,15 @@ export interface CreateProject {
   contract: Contract;
   funding: "hourly" | "fixed";
   initialFunding?: number;
-  freelancerRequirement?: ExperienceLevel;
+  candidateRequirement?: ExperienceLevel;
   timeToComplete: "<1 month" | "1-3 months" | ">3 months";
   createdBy: string;
-  privacy: "public" | "private" | "freelancer";
+  privacy: "public" | "private" | "candidate";
   projectType: "longterm" | "shortterm" | "unknown";
   optionalRequirements: OptionalRequirements;
 }
 
-export interface FreelancerProject extends Project {
+export interface CandidateProject extends Project {
   startDate: number;
   endDate?: number;
   status: "doing" | "stopped" | "contracting" | "verifying" | "denied";

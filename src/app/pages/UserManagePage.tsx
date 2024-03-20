@@ -6,7 +6,7 @@ import {
 } from "../components/ui-admin/dropdown";
 import { useSetHeaderTitle } from "../hooks/useSetHeaderTitle";
 import { Key } from "react";
-import { freelancer } from "../../constants/testData";
+import { candidate } from "../../constants/testData";
 import { generateVerifyMsg } from "../utils/generators";
 import { formatUnixToLocal } from "../utils/utils";
 
@@ -52,21 +52,21 @@ export default function UserManage() {
   const data: UserDetailTable[] = [
     {
       key: "1",
-      ...freelancer,
-      dobString: formatUnixToLocal(freelancer.dob),
-      status: generateVerifyMsg(freelancer.isVerified),
+      ...candidate,
+      dobString: formatUnixToLocal(candidate.dob),
+      status: generateVerifyMsg(candidate.isVerified),
     },
     {
       key: "2",
-      ...freelancer,
-      dobString: formatUnixToLocal(freelancer.dob),
-      status: generateVerifyMsg(freelancer.isVerified),
+      ...candidate,
+      dobString: formatUnixToLocal(candidate.dob),
+      status: generateVerifyMsg(candidate.isVerified),
     },
     {
       key: "3",
-      ...freelancer,
-      dobString: formatUnixToLocal(freelancer.dob),
-      status: generateVerifyMsg(freelancer.isVerified),
+      ...candidate,
+      dobString: formatUnixToLocal(candidate.dob),
+      status: generateVerifyMsg(candidate.isVerified),
     },
   ];
 

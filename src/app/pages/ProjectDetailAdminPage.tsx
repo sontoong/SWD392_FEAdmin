@@ -138,7 +138,7 @@ export default function ProjectDetail() {
     title,
     funding,
     initialFunding,
-    freelancerRequirement,
+    candidateRequirement,
     description,
     projectType,
     optionalRequirements,
@@ -188,7 +188,7 @@ export default function ProjectDetail() {
                   <span>
                     {initialFunding
                       ? formatCurrency(initialFunding)
-                      : generateRequirementMsg(freelancerRequirement).priceDesc}
+                      : generateRequirementMsg(candidateRequirement).priceDesc}
                   </span>
                 </Space>
               </Title>
@@ -201,12 +201,12 @@ export default function ProjectDetail() {
                 <Space>
                   <TeamOutlined />
                   <span>
-                    {generateRequirementMsg(freelancerRequirement).title}
+                    {generateRequirementMsg(candidateRequirement).title}
                   </span>
                 </Space>
               </Title>
               <Text type="secondary">
-                {generateRequirementMsg(freelancerRequirement).desc}
+                {generateRequirementMsg(candidateRequirement).desc}
               </Text>
             </Col>
           </Row>
@@ -220,11 +220,19 @@ export default function ProjectDetail() {
               <Title level={3}>Văn bằng ưu tiên</Title>
               <Title level={5}>
                 Công việc đã hoàn thành:{" "}
-                {generateProjectCompleted(optionalRequirements.minimumCompletedProjects)}
+                {generateProjectCompleted(
+                  optionalRequirements.minimumCompletedProjects,
+                )}
               </Title>
-              <Title level={5}>Đánh giá: {generateRating(optionalRequirements.rating)}</Title>
-              <Title level={5}>Ngôn ngữ: {generateLanguage(optionalRequirements.language)}</Title>
-              <Title level={5}>Đất nước: {nations[optionalRequirements.nation].label}</Title>
+              <Title level={5}>
+                Đánh giá: {generateRating(optionalRequirements.rating)}
+              </Title>
+              <Title level={5}>
+                Ngôn ngữ: {generateLanguage(optionalRequirements.language)}
+              </Title>
+              <Title level={5}>
+                Đất nước: {nations[optionalRequirements.nation].label}
+              </Title>
             </Col>
             <Col span={8} offset={1}>
               <Title level={3}>Hoạt động ở công việc này</Title>

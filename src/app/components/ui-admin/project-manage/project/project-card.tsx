@@ -30,7 +30,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     projectField,
     publishedTime,
     description,
-    freelancerRequirement,
+    candidateRequirement,
     paidAmount,
     applicationCount,
     createdBy,
@@ -76,7 +76,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           <div className="flex items-center gap-5">
             <div className="whitespace-nowrap">
               <span className="font-bold">Kinh nghiệm: </span>
-              {generateRequirementMsg(freelancerRequirement).short}
+              {generateRequirementMsg(candidateRequirement).short}
             </div>
             <Divider type="vertical" />
             <div className="whitespace-nowrap">
@@ -101,7 +101,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <Title level={3} className="text-right">
           {generateProjectFunding(
             funding,
-            freelancerRequirement,
+            candidateRequirement,
             initialFunding,
           )}
           <br />

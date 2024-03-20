@@ -8,7 +8,7 @@ export interface ProjectSearch {
   timeToComplete: "all" | "<1 month" | "1-3 month" | ">3 month";
 }
 
-export interface FreelancerSearch {
+export interface CandidateSearch {
   input?: string;
   projectField?: string;
   nation: string;

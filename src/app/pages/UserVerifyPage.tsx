@@ -2,7 +2,7 @@ import { Table, TableProps } from "antd";
 import { EyeOutlined } from "@ant-design/icons";
 import { useSetHeaderTitle } from "../hooks/useSetHeaderTitle";
 import { UserDetailTable } from "../models/user";
-import { freelancer } from "../../constants/testData";
+import { candidate } from "../../constants/testData";
 import { generateVerifyMsg } from "../utils/generators";
 import { Link } from "react-router-dom";
 import { formatUnixToLocal } from "../utils/utils";
@@ -18,21 +18,21 @@ export default function VerifyUserPage() {
   const data: UserDetailTable[] = [
     {
       key: "1",
-      ...freelancer,
-      dobString: formatUnixToLocal(freelancer.dob),
-      status: generateVerifyMsg(freelancer.isVerified),
+      ...candidate,
+      dobString: formatUnixToLocal(candidate.dob),
+      status: generateVerifyMsg(candidate.isVerified),
     },
     {
       key: "2",
-      ...freelancer,
-      dobString: formatUnixToLocal(freelancer.dob),
-      status: generateVerifyMsg(freelancer.isVerified),
+      ...candidate,
+      dobString: formatUnixToLocal(candidate.dob),
+      status: generateVerifyMsg(candidate.isVerified),
     },
     {
       key: "3",
-      ...freelancer,
-      dobString: formatUnixToLocal(freelancer.dob),
-      status: generateVerifyMsg(freelancer.isVerified),
+      ...candidate,
+      dobString: formatUnixToLocal(candidate.dob),
+      status: generateVerifyMsg(candidate.isVerified),
     },
   ];
 
