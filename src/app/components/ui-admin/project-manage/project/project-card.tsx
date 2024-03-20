@@ -98,7 +98,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             </div>
           </div>
         </Space>
-        <Title level={3} className="text-right">
+        <Title level={3} className="whitespace-nowrap text-right">
           {generateProjectFunding(
             funding,
             candidateRequirement,

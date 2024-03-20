@@ -78,8 +78,8 @@ export default function UserManage() {
     },
     {
       title: "Họ Và Tên",
-      dataIndex: "name",
-      key: "name",
+      dataIndex: "username",
+      key: "username",
     },
     {
       title: "Email",

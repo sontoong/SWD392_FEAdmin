@@ -65,10 +65,10 @@ export default function MyHeader() {
     switch (role) {
       case "admin":
         return [
+          getItem("Dashboard", "/dashboard"),
           getItem("Quản Lý Tài Khoản", "/users"),
           getItem("Quản Lý Project", "/projects"),
           getItem("Xác Thực Người Dùng", "/verify-user"),
-          getItem("Dashboard", "/dashboard"),
         ];
       default:
         return [getItem("", "/")];

@@ -44,8 +44,8 @@ export default function VerifyUserPage() {
     },
     {
       title: "Họ Và Tên",
-      dataIndex: "name",
-      key: "name",
+      dataIndex: "username",
+      key: "username",
     },
     {
       title: "Email",

@@ -31,9 +31,14 @@ export type Field = {
 };
 
 export interface Contract {
+  candidateName: string;
+  candidateId: string;
+  projectName: string;
+  projectId: string;
   fund: number;
-  depositType: "full" | "period ";
+  depositType: "full" | "period";
   date: number;
+  status: "completed" | "doing" | "canceled";
 }
 
 export interface Project {
@@ -42,7 +47,6 @@ export interface Project {
   language: languages;
   projectField: SkillField;
   description: string;
-  contract: Contract;
   funding: "hourly" | "fixed";
   initialFunding: number;
   candidateRequirement: ExperienceLevel;
@@ -62,19 +66,21 @@ export interface Project {
   candidateCount: number;
 }
 
-export interface CreateProject {
-  title: string;
+export interface CreateProject
+  extends Pick<
+    Project,
+    | "description"
+    | "funding"
+    | "initialFunding"
+    | "candidateRequirement"
+    | "timeToComplete"
+    | "title"
+    | "createdBy"
+    | "privacy"
+    | "projectType"
+    | "optionalRequirements"
+  > {
   projectField: string;
-  description: string;
-  contract: Contract;
-  funding: "hourly" | "fixed";
-  initialFunding?: number;
-  candidateRequirement?: ExperienceLevel;
-  timeToComplete: "<1 month" | "1-3 months" | ">3 months";
-  createdBy: string;
-  privacy: "public" | "private" | "candidate";
-  projectType: "longterm" | "shortterm" | "unknown";
-  optionalRequirements: OptionalRequirements;
 }
 
 export interface CandidateProject extends Project {
