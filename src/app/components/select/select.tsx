@@ -55,5 +55,5 @@ export function FormTreeSelect(props: FormTreeSelectProps) {
 }
 
 export function SelectMultiple(props: SelectProps) {
-  return <FormSelect mode="multiple" allowClear {...props} />;
+  return <Select mode="multiple" allowClear {...props} />;
 }

@@ -179,7 +179,7 @@ export function generateDepositType(
   switch (type) {
     case "full":
       return `Đặt cọc ${fund} cho toàn bộ công việc`;
-    case "period ":
+    case "period":
       return "Đặt cọc theo từng hạng mục công việc";
   }
 }

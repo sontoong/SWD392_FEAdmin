@@ -1,6 +1,5 @@
 import { Card, Space } from 'antd';
 import Chart from '../components/ui-admin/dashboard/Chart';
-import LastestPost from '..//components/ui-admin/dashboard/LastestPost';
 import { useSetHeaderTitle } from "../hooks/useSetHeaderTitle";
 
 export default function Dashboard() {

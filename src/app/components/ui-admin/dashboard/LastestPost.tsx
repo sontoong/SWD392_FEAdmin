@@ -1,5 +1,3 @@
-import ProjectList from "../project-manage/project/project-list";
-import { projects } from "../../../../constants/t";
 
 export default function LastestPost() {
   return (

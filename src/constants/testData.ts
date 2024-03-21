@@ -12,7 +12,6 @@ import {
   EnterpriseProject,
   OutsideProject,
   Field,
-  SkillField,
   Contract,
 } from "../app/models/project";
 import { Transaction } from "../app/models/transaction";
@@ -36,16 +35,18 @@ const skills: Skill[] = [
 ];
 
 export const fields: Field[] = [
-  { label: "IT", value: "it" },
-  { label: "Nấu ăn", value: "cook" },
+  { label: "IT", value: "it"},
+  { label: "Nấu ăn", value: "cook"},
 ];
 
-const field: SkillField = {
-  label: "IT",
-  value: "it",
-};
+const field: Field = {
+    label: "IT",
+    value: "it",
+}
 
-const field1: SkillField = {
+
+
+const field1: Field = {
   label: "Nấu ăn",
   value: "cook",
 };
@@ -168,7 +169,7 @@ Facebook: fb.com/user/JoeBiden`,
       ratingCount: 0,
     },
   ],
-  jobField: { label: "IT", value: "it" },
+  jobField: { label: "IT", value: "it"},
 };
 
 export const projects: Project[] = [project, project, project];

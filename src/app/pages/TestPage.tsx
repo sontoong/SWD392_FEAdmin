@@ -1,5 +1,9 @@
+import FieldManagePage from "./FieldManagePage";
+
 const App: React.FC = () => {
-  return <div>a</div>;
+  return <div>
+    <FieldManagePage/>
+  </div>;
 };
 
 export default App;
