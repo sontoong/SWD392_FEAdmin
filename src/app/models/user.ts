@@ -18,15 +18,15 @@ export interface Education {
 }
 
 export interface UserDetail {
-  id: string;
+  accountId: string;
   username: string;
   email: string;
   phone: string;
-  dob: number;
+  dob?: number;
   role: "candidate" | "enterprise" | "admin";
   address: string;
   nation: string;
-  isVerified: boolean;
+  verified: boolean;
   averageRating: number;
   ratingCount: number;
   projectCount: number;

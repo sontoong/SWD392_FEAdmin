@@ -1,14 +1,15 @@
 import { Table, TableProps } from "antd";
-import { UserDetailTable } from "../models/user";
+import { CandidateDetail, UserDetailTable } from "../models/user";
 import {
   CustomDropdown,
   CustomDropdownProps,
 } from "../components/ui-admin/dropdown";
 import { useSetHeaderTitle } from "../hooks/useSetHeaderTitle";
-import { Key } from "react";
-import { candidate } from "../../constants/testData";
+import { Key, useEffect, useState } from "react";
 import { generateVerifyMsg } from "../utils/generators";
 import { formatUnixToLocal } from "../utils/utils";
+import { useAppDispatch } from "../redux/hook";
+import { fetchCandidates } from "../redux/slice/candidateSlice";
 
 export default function UserManage() {
   useSetHeaderTitle([
@@ -17,6 +18,18 @@ export default function UserManage() {
       path: "/users",
     },
   ]);
+  const dispatch = useAppDispatch();
+  const [candidates, setCandidates] = useState<CandidateDetail[]>([]);
+
+  useEffect(() => {
+    async function fetch() {
+      const res = await dispatch(fetchCandidates()).unwrap();
+      if (res) {
+        setCandidates(res);
+      }
+    }
+    fetch();
+  }, [dispatch]);
 
   const dropdownItems: CustomDropdownProps["items"] = [
     {
@@ -36,45 +49,33 @@ export default function UserManage() {
     key: Key | undefined,
     record: UserDetailTable,
   ): boolean => {
-    const { isVerified } = record;
+    const { verified } = record;
     switch (key) {
       case "activate": {
-        return isVerified === true;
+        return verified === true;
       }
       case "unactivate": {
-        return isVerified === false;
+        return verified === false;
       }
       default:
         return false;
     }
   };
 
-  const data: UserDetailTable[] = [
-    {
-      key: "1",
+  const data: UserDetailTable[] = candidates.map((candidate, index) => {
+    return {
       ...candidate,
-      dobString: formatUnixToLocal(candidate.dob),
-      status: generateVerifyMsg(candidate.isVerified),
-    },
-    {
-      key: "2",
-      ...candidate,
-      dobString: formatUnixToLocal(candidate.dob),
-      status: generateVerifyMsg(candidate.isVerified),
-    },
-    {
-      key: "3",
-      ...candidate,
-      dobString: formatUnixToLocal(candidate.dob),
-      status: generateVerifyMsg(candidate.isVerified),
-    },
-  ];
+      key: `${index + 1}`,
+      dobString: formatUnixToLocal(candidate.dob || -1),
+      status: generateVerifyMsg(candidate.verified),
+    };
+  });
 
   const columns: TableProps<UserDetailTable>["columns"] = [
     {
-      title: "ID",
-      dataIndex: "id",
-      key: "id",
+      title: "STT",
+      dataIndex: "key",
+      key: "key",
     },
     {
       title: "Họ Và Tên",

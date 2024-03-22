@@ -6,15 +6,13 @@ export default function MyContent({ children }: { children: React.ReactNode }) {
   const { headerTitle } = useAppSelector((state) => state.header);
   const currentHeader = headerTitle[headerTitle.length - 1];
   return (
-    <Content className="mt-5 pb-20 pt-16">
+    <Content className="pb-20 pt-16">
       {currentHeader.title ? (
-        <div className="bg-main p-5 text-xl uppercase text-white ">
-          {currentHeader.title}
-        </div>
+        <div className=" p-5 text-xl uppercase">{currentHeader.title}</div>
       ) : (
         <></>
       )}
-      <main className=" h-full bg-white">{children}</main>
+      <main className="h-full bg-white">{children}</main>
     </Content>
   );
 }

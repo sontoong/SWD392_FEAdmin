@@ -15,20 +15,21 @@ const requests = {
 };
 
 const Admin = {
-  getCandidates: () => requests.get("admin/candidate"),
-  getCandidate: (username: string) =>
-    requests.get(`admin/candidate/${username}`),
+  getCandidates: () => requests.get("/admin/candidate"),
+  getCandidate: (userId: string) => requests.get(`/admin/candidate/${userId}`),
   updateCandidate: (username: string, data: string) =>
-    requests.patch(`admin/candidate/${username}`, data),
-  getEnterprises: () => requests.get("admin/enterprise"),
+    requests.patch(`/admin/candidate/${username}`, data),
+  getEnterprises: () => requests.get("/admin/enterprise"),
   getEnterprise: (username: string) =>
-    requests.get(`admin/enterprise/${username}`),
+    requests.get(`/admin/enterprise/${username}`),
   updateEnterprise: (username: string, data: string) =>
-    requests.patch(`admin/enterprise/${username}`, data),
+    requests.patch(`/admin/enterprise/${username}`, data),
   verifyUser: (username: string, data: { role: string }) =>
-    requests.patch(`admin/verify/${username}`, data),
+    requests.patch(`/admin/verify/${username}`, data),
   deactivateUser: (username: string, data: any) =>
-    requests.patch(`admin/deactivate/${username}`, data),
+    requests.patch(`/admin/deactivate/${username}`, data),
+  activateUser: (username: string, data: any) =>
+    requests.patch(`/admin/deactivate/${username}`, data),
 };
 
 const agent = {

@@ -14,6 +14,7 @@ export const formatUnixToLocal = (
   },
   locale: string = "vi-VN",
 ) => {
+  if (typeof unixTimestamp !== "number") return unixTimestamp;
   const milliseconds = unixTimestamp;
   const date = new Date(milliseconds);
   const formatter = new Intl.DateTimeFormat(locale, options);
@@ -43,14 +44,14 @@ export const formatToTimeDifference = (
   };
   const formatter = new Intl.RelativeTimeFormat(locale, options);
 
-  if (timeDifference < 60) {
-    return formatter.format(-Math.floor(timeDifference), "second");
+  if (timeDifference < 60000) {
+    return formatter.format(-Math.floor(timeDifference / 1000), "second");
   } else if (timeDifference < 3600) {
-    return formatter.format(-Math.floor(timeDifference / 60), "minute");
+    return formatter.format(-Math.floor(timeDifference / 60000), "minute");
   } else if (timeDifference < 86400) {
-    return formatter.format(-Math.floor(timeDifference / 3600), "hour");
+    return formatter.format(-Math.floor(timeDifference / 3600000), "hour");
   } else {
-    return formatter.format(-Math.floor(timeDifference / 86400), "day");
+    return formatter.format(-Math.floor(timeDifference / 86400000), "day");
   }
 };
 

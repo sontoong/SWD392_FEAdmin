@@ -35,16 +35,14 @@ const skills: Skill[] = [
 ];
 
 export const fields: Field[] = [
-  { label: "IT", value: "it"},
-  { label: "Nấu ăn", value: "cook"},
+  { label: "IT", value: "it" },
+  { label: "Nấu ăn", value: "cook" },
 ];
 
 const field: Field = {
-    label: "IT",
-    value: "it",
-}
-
-
+  label: "IT",
+  value: "it",
+};
 
 const field1: Field = {
   label: "Nấu ăn",
@@ -114,7 +112,7 @@ export const experience1: Experience = {
 };
 
 export const candidate: CandidateDetail = {
-  id: "1",
+  accountId: "1",
   role: "candidate",
   dob: 1708532861000,
   email: "nguyena@gmail.com",
@@ -123,8 +121,8 @@ export const candidate: CandidateDetail = {
   address:
     "Đường D1, Đ. D1, Phường Tân Phú, Quận 9, Thành phố Hồ Chí Minh 715650",
   nation: "vn",
-  isVerified: true,
-  averageRating: 3.5,
+  verified: true,
+  averageRating: 0,
   ratingCount: 10,
   createdAt: 1708532861000,
   description: `20 năm trong Full-Stack Development + UI/UX
@@ -144,32 +142,32 @@ Facebook: fb.com/user/JoeBiden`,
   experiences: [experience1],
   rating: [
     {
-      name: "quality",
+      name: "Chất lượng",
       rating: 0,
       ratingCount: 0,
     },
     {
-      name: "price",
+      name: "Chi phí",
       rating: 0,
       ratingCount: 0,
     },
     {
-      name: "time",
+      name: "Thời gian",
       rating: 0,
       ratingCount: 0,
     },
     {
-      name: "response",
+      name: "Tin cậy",
       rating: 0,
       ratingCount: 0,
     },
     {
-      name: "talking",
+      name: "Giao tiếp",
       rating: 0,
       ratingCount: 0,
     },
   ],
-  jobField: { label: "IT", value: "it"},
+  jobField: { label: "IT", value: "it" },
 };
 
 export const projects: Project[] = [project, project, project];

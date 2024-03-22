@@ -1,9 +1,10 @@
 import { Suspense, lazy } from "react";
 import { Navigate, Outlet, createBrowserRouter } from "react-router-dom";
 import { ROLE } from "../../constants/role";
+import FieldManagePage from "../pages/FieldManagePage";
 
 const Layout = lazy(() => import("../components/layout/admin-layout"));
-const Dashboard = lazy(() => import("../pages/DashBoard"))
+const Dashboard = lazy(() => import("../pages/DashBoard"));
 
 //public
 const LoginPage = lazy(() => import("../pages/LoginPage"));
@@ -42,7 +43,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Navigate to={"users"} />,
+        element: <Navigate to={"dashboard"} />,
       },
       {
         path: "dashboard",
@@ -64,7 +65,7 @@ export const router = createBrowserRouter([
         path: "users/:userId",
         element: (
           <Suspense fallback={<></>}>
-            <UserDetailAdminPage />
+            <UserDetailAdminPage type="admin" verify={false} />
           </Suspense>
         ),
       },
@@ -85,6 +86,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "fields",
+        element: (
+          <Suspense fallback={<></>}>
+            <FieldManagePage />
+          </Suspense>
+        ),
+      },
+      {
         path: "verify-user",
         element: (
           <Suspense fallback={<></>}>
@@ -96,7 +105,7 @@ export const router = createBrowserRouter([
         path: "verify-user/:userId",
         element: (
           <Suspense fallback={<></>}>
-            <UserDetailAdminPage verify={true} />
+            <UserDetailAdminPage verify={true} type="admin" />
           </Suspense>
         ),
       },

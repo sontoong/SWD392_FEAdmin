@@ -35,7 +35,7 @@ export function CustomDropdown({
     const { key } = e;
     switch (key) {
       case "information": {
-        navigate(`${record.id}`);
+        navigate(`${record.accountId}`);
         break;
       }
       case "activate": {
@@ -86,7 +86,7 @@ export function CustomDropdown({
         break;
       }
       case "edit": {
-        navigate(`user/edit/${record.id}`);
+        navigate(`user/edit/${record.accountId}`);
         break;
       }
 
